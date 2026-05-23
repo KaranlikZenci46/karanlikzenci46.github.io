@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="tr" class="lang-pending">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -140,6 +140,10 @@
             60% { transform: translateX(-2px); }
             80% { transform: translateX(2px); }
         }
+
+        html.lang-pending body {
+            visibility: hidden;
+        }
     </style>
 </head>
 <body class="bg-black text-white overflow-x-hidden">
@@ -151,9 +155,9 @@
                     &lt;46/&gt;
                 </div>
                 <div class="flex space-x-6">
-                    <a href="#home" class="nav-link active text-gray-400 hover:text-white transition-colors">Ana Sayfa</a>
-                    <a href="#about" class="nav-link text-gray-400 hover:text-white transition-colors">Hakkımda</a>
-                    <a href="#contact" class="nav-link text-gray-400 hover:text-white transition-colors">İletişim</a>
+                    <a href="#home" class="nav-link active text-gray-400 hover:text-white transition-colors" data-i18n="navHome">Ana Sayfa</a>
+                    <a href="#about" class="nav-link text-gray-400 hover:text-white transition-colors" data-i18n="navAbout">Hakkımda</a>
+                    <a href="#contact" class="nav-link text-gray-400 hover:text-white transition-colors" data-i18n="navContact">İletişim</a>
                 </div>
             </div>
         </div>
@@ -167,13 +171,13 @@
         <div class="container mx-auto px-4 text-center relative z-10">
             <div class="slide-in">
                 <h1 class="text-5xl md:text-7xl font-bold mb-4 glitch">
-                    Merhaba, ben <span class="text-green-400">46</span>
+                    <span data-i18n="heroGreeting">Merhaba, ben</span> <span class="text-green-400">46</span>
                 </h1>
-                <p class="text-xl md:text-2xl text-gray-400 mb-8 slide-in" style="animation-delay: 0.3s;">
+                <p class="text-xl md:text-2xl text-gray-400 mb-8 slide-in" style="animation-delay: 0.3s;" data-i18n="heroRole">
                     Yazılımcı & Geliştirici
                 </p>
-                <div class="text-sm text-green-400 opacity-70 mb-8 slide-in" style="animation-delay: 0.6s;">
-                    &gt; console.log("Welcome to my digital world");
+                <div class="text-sm text-green-400 opacity-70 mb-8 slide-in" style="animation-delay: 0.6s;" data-i18n="heroConsole">
+                    &gt; console.log("Dijital dünyama hoş geldin");
                 </div>
             </div>
         </div>
@@ -189,69 +193,69 @@
         <div class="container mx-auto px-4">
             <div class="max-w-4xl mx-auto">
                 <h2 class="text-4xl font-bold text-center mb-4 slide-in">
-                    <span class="text-green-400">&lt;</span>Hakkımda<span class="text-green-400">/&gt;</span>
+                    <span class="text-green-400">&lt;</span><span data-i18n="aboutTitle">Hakkımda</span><span class="text-green-400">/&gt;</span>
                 </h2>
-                <p class="text-gray-400 text-center mb-12 max-w-2xl mx-auto slide-in" style="animation-delay: 0.2s;">
-                    Kod yazmanın sanatını keşfeden, dijital dünyada iz bırakmaya odaklanan bir geliştiriciyim. Her proje benim için yeni bir macera ve öğrenme fırsatı.
+                <p class="text-gray-400 text-center mb-12 max-w-2xl mx-auto slide-in" style="animation-delay: 0.2s;" data-i18n="aboutIntro">
+                    Yapay zeka sistemleri ve yüksek performanslı yazılım geliştiren bir AI Engineer'ım. C++ ile optimize edilmiş çekirdekler, modern ML pipeline'ları ve üretime hazır modeller üzerinde çalışıyorum.
                 </p>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
                     <div class="skill-card bg-black bg-opacity-50 p-6 rounded-lg border border-gray-800 hover:border-green-400 card-hover slide-in" style="animation-delay: 0.1s;">
                         <div class="flex items-center mb-3">
-                            <i class="fab fa-node-js skill-icon text-green-400 text-2xl mr-3"></i>
-                            <h3 class="font-semibold">Node.js</h3>
+                            <i class="fas fa-code skill-icon text-green-400 text-2xl mr-3"></i>
+                            <h3 class="font-semibold">C++</h3>
                         </div>
-                        <p class="text-gray-400 text-sm">Backend geliştirme ve API tasarımı</p>
+                        <p class="text-gray-400 text-sm" data-i18n="skillCpp">Sistem programlama, performans optimizasyonu ve AI inference çekirdekleri</p>
                     </div>
 
                     <div class="skill-card bg-black bg-opacity-50 p-6 rounded-lg border border-gray-800 hover:border-green-400 card-hover slide-in" style="animation-delay: 0.2s;">
                         <div class="flex items-center mb-3">
-                            <i class="fab fa-python skill-icon text-green-400 text-2xl mr-3"></i>
-                            <h3 class="font-semibold">Python</h3>
+                            <i class="fas fa-brain skill-icon text-green-400 text-2xl mr-3"></i>
+                            <h3 class="font-semibold">AI Engineer</h3>
                         </div>
-                        <p class="text-gray-400 text-sm">Otomasyon ve veri işleme</p>
+                        <p class="text-gray-400 text-sm" data-i18n="skillAi">LLM entegrasyonu, RAG pipeline'ları ve model servisleme</p>
                     </div>
 
                     <div class="skill-card bg-black bg-opacity-50 p-6 rounded-lg border border-gray-800 hover:border-green-400 card-hover slide-in" style="animation-delay: 0.3s;">
                         <div class="flex items-center mb-3">
-                            <i class="fas fa-robot skill-icon text-green-400 text-2xl mr-3"></i>
-                            <h3 class="font-semibold">Puppeteer</h3>
+                            <i class="fas fa-chart-line skill-icon text-green-400 text-2xl mr-3"></i>
+                            <h3 class="font-semibold">Machine Learning</h3>
                         </div>
-                        <p class="text-gray-400 text-sm">Web scraping ve browser otomasyonu</p>
+                        <p class="text-gray-400 text-sm" data-i18n="skillMl">Model eğitimi, fine-tuning ve değerlendirme metrikleri</p>
                     </div>
 
                     <div class="skill-card bg-black bg-opacity-50 p-6 rounded-lg border border-gray-800 hover:border-green-400 card-hover slide-in" style="animation-delay: 0.4s;">
                         <div class="flex items-center mb-3">
-                            <i class="fas fa-shield-alt skill-icon text-green-400 text-2xl mr-3"></i>
-                            <h3 class="font-semibold">Güvenlik Araçları</h3>
+                            <i class="fas fa-fire skill-icon text-green-400 text-2xl mr-3"></i>
+                            <h3 class="font-semibold">PyTorch / TensorFlow</h3>
                         </div>
-                        <p class="text-gray-400 text-sm">Siber güvenlik ve penetrasyon testleri</p>
+                        <p class="text-gray-400 text-sm" data-i18n="skillPt">Derin öğrenme, sinir ağı mimarileri ve ONNX export</p>
                     </div>
 
                     <div class="skill-card bg-black bg-opacity-50 p-6 rounded-lg border border-gray-800 hover:border-green-400 card-hover slide-in" style="animation-delay: 0.5s;">
                         <div class="flex items-center mb-3">
-                            <i class="fab fa-discord skill-icon text-green-400 text-2xl mr-3"></i>
-                            <h3 class="font-semibold">Discord Bot</h3>
+                            <i class="fas fa-microchip skill-icon text-green-400 text-2xl mr-3"></i>
+                            <h3 class="font-semibold">CUDA / GPU</h3>
                         </div>
-                        <p class="text-gray-400 text-sm">Bot geliştirme ve topluluk yönetimi</p>
+                        <p class="text-gray-400 text-sm" data-i18n="skillCuda">GPU hızlandırma, paralel hesaplama ve düşük gecikmeli inference</p>
                     </div>
 
                     <div class="skill-card bg-black bg-opacity-50 p-6 rounded-lg border border-gray-800 hover:border-green-400 card-hover slide-in" style="animation-delay: 0.6s;">
                         <div class="flex items-center mb-3">
-                            <i class="fas fa-gamepad skill-icon text-green-400 text-2xl mr-3"></i>
-                            <h3 class="font-semibold">Roblox Script</h3>
+                            <i class="fas fa-eye skill-icon text-green-400 text-2xl mr-3"></i>
+                            <h3 class="font-semibold">Computer Vision</h3>
                         </div>
-                        <p class="text-gray-400 text-sm">Oyun geliştirme ve scripting</p>
+                        <p class="text-gray-400 text-sm" data-i18n="skillCv">Görüntü işleme, nesne tanıma ve video analizi</p>
                     </div>
                 </div>
 
                 <div class="p-6 bg-black bg-opacity-30 rounded-lg border border-gray-800 pulse-bg slide-in" style="animation-delay: 0.7s;">
-                    <div class="text-green-400 mb-2 text-sm"># Kod Felsefem</div>
-                    <p class="text-gray-300">
-                        "Temiz kod yazmak sadece çalışan kod yazmaktan daha önemlidir. Her satır, gelecekteki benim için ve takım arkadaşlarım için bir mesaj bırakır."
+                    <div class="text-green-400 mb-2 text-sm" data-i18n="philTitle"># Kod Felsefem</div>
+                    <p class="text-gray-300" data-i18n="philQuote">
+                        "İyi bir model kadar iyi bir inference pipeline'ı da önemlidir. Performans, doğruluk ve sürdürülebilirlik — üçlü denge."
                     </p>
                     <div class="mt-4 text-green-400 opacity-70 text-sm">
-                        &gt; while(coding) { learn(); improve(); repeat(); }
+                        &gt; while(building_ai) { train(); optimize(); deploy(); }
                     </div>
                 </div>
             </div>
@@ -263,16 +267,16 @@
         <div class="container mx-auto px-4">
             <div class="max-w-6xl mx-auto text-center">
                 <h2 class="text-4xl font-bold mb-4 slide-in">
-                    <span class="text-green-400">&lt;</span>İletişim<span class="text-green-400">/&gt;</span>
+                    <span class="text-green-400">&lt;</span><span data-i18n="contactTitle">İletişim</span><span class="text-green-400">/&gt;</span>
                 </h2>
-                <p class="text-gray-400 mb-12 slide-in" style="animation-delay: 0.2s;">
+                <p class="text-gray-400 mb-12 slide-in" style="animation-delay: 0.2s;" data-i18n="contactIntro">
                     Benimle iletişime geçmek ister misin? Projeler hakkında konuşalım!
                 </p>
 
                 <div class="flex flex-wrap justify-center gap-8 mb-12">
                     <a href="mailto:karanlikzenci46@gmail.com" class="card-hover bg-gray-900 p-8 rounded-lg border border-gray-800 hover:border-green-400 transition-all slide-in inline-block" style="animation-delay: 0.3s;">
                         <i class="fas fa-envelope text-green-400 text-3xl mb-4 block"></i>
-                        <h3 class="font-semibold mb-2">E-posta</h3>
+                        <h3 class="font-semibold mb-2" data-i18n="emailLabel">E-posta</h3>
                         <p class="text-gray-400 text-sm whitespace-nowrap">rule46@outlook.com</p>
                     </a>
 
@@ -293,7 +297,7 @@
     <!-- Footer -->
     <footer class="bg-gray-900 border-t border-gray-800 py-6">
         <div class="container mx-auto px-4 text-center">
-            <p class="text-gray-400 text-sm">
+            <p class="text-gray-400 text-sm" data-i18n="footerText">
                 © 2025 46. Made with <span class="text-green-400">❤</span> and lots of <span class="text-green-400">☕</span>
             </p>
             <div class="mt-2 text-green-400 opacity-50 text-xs">
@@ -303,6 +307,102 @@
     </footer>
 
     <script>
+        const i18n = {
+            tr: {
+                pageTitle: '46 - Geliştirici Portföyü',
+                navHome: 'Ana Sayfa',
+                navAbout: 'Hakkımda',
+                navContact: 'İletişim',
+                heroGreeting: 'Merhaba, ben',
+                heroRole: 'Yazılımcı & Geliştirici',
+                heroConsole: '> console.log("Dijital dünyama hoş geldin");',
+                aboutTitle: 'Hakkımda',
+                aboutIntro: "Yapay zeka sistemleri ve yüksek performanslı yazılım geliştiren bir AI Engineer'ım. C++ ile optimize edilmiş çekirdekler, modern ML pipeline'ları ve üretime hazır modeller üzerinde çalışıyorum.",
+                skillCpp: 'Sistem programlama, performans optimizasyonu ve AI inference çekirdekleri',
+                skillAi: "LLM entegrasyonu, RAG pipeline'ları ve model servisleme",
+                skillMl: 'Model eğitimi, fine-tuning ve değerlendirme metrikleri',
+                skillPt: 'Derin öğrenme, sinir ağı mimarileri ve ONNX export',
+                skillCuda: 'GPU hızlandırma, paralel hesaplama ve düşük gecikmeli inference',
+                skillCv: 'Görüntü işleme, nesne tanıma ve video analizi',
+                philTitle: '# Kod Felsefem',
+                philQuote: '"İyi bir model kadar iyi bir inference pipeline\'ı da önemlidir. Performans, doğruluk ve sürdürülebilirlik — üçlü denge."',
+                contactTitle: 'İletişim',
+                contactIntro: 'Benimle iletişime geçmek ister misin? Projeler hakkında konuşalım!',
+                emailLabel: 'E-posta',
+                footerText: '© 2025 46. <span class="text-green-400">❤</span> ve bolca <span class="text-green-400">☕</span> ile yapıldı'
+            },
+            en: {
+                pageTitle: '46 - Developer Portfolio',
+                navHome: 'Home',
+                navAbout: 'About',
+                navContact: 'Contact',
+                heroGreeting: "Hello, I'm",
+                heroRole: 'Software Developer & Engineer',
+                heroConsole: '> console.log("Welcome to my digital world");',
+                aboutTitle: 'About',
+                aboutIntro: 'I am an AI Engineer building intelligent systems and high-performance software. I work on C++-optimized cores, modern ML pipelines, and production-ready models.',
+                skillCpp: 'Systems programming, performance optimization, and AI inference kernels',
+                skillAi: 'LLM integration, RAG pipelines, and model serving',
+                skillMl: 'Model training, fine-tuning, and evaluation metrics',
+                skillPt: 'Deep learning, neural network architectures, and ONNX export',
+                skillCuda: 'GPU acceleration, parallel computing, and low-latency inference',
+                skillCv: 'Image processing, object detection, and video analysis',
+                philTitle: '# Code Philosophy',
+                philQuote: '"A great model deserves an equally great inference pipeline. Performance, accuracy, and maintainability — the triple balance."',
+                contactTitle: 'Contact',
+                contactIntro: 'Want to get in touch? Let\'s talk about projects!',
+                emailLabel: 'Email',
+                footerText: '© 2025 46. Made with <span class="text-green-400">❤</span> and lots of <span class="text-green-400">☕</span>'
+            }
+        };
+
+        async function detectLocaleFromIP() {
+            const apis = [
+                async () => {
+                    const res = await fetch('https://get.geojs.io/v1/ip/country.json', { signal: AbortSignal.timeout(5000) });
+                    const data = await res.json();
+                    return data.country;
+                },
+                async () => {
+                    const res = await fetch('https://ipapi.co/json/', { signal: AbortSignal.timeout(5000) });
+                    const data = await res.json();
+                    return data.country_code;
+                }
+            ];
+
+            for (const api of apis) {
+                try {
+                    const country = await api();
+                    if (country) return country === 'TR' ? 'tr' : 'en';
+                } catch (_) { /* try next API */ }
+            }
+            return 'en';
+        }
+
+        function applyLocale(locale) {
+            const strings = i18n[locale];
+            document.documentElement.lang = locale;
+            document.title = strings.pageTitle;
+
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                const value = strings[key];
+                if (!value) return;
+                if (key === 'footerText') {
+                    el.innerHTML = value;
+                } else {
+                    el.textContent = value;
+                }
+            });
+        }
+
+        async function initLocale() {
+            const locale = await detectLocaleFromIP();
+            applyLocale(locale);
+            document.documentElement.classList.remove('lang-pending');
+            return locale;
+        }
+
         // Smooth scrolling for navigation
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -359,6 +459,8 @@
             }, 500);
         }
 
+        initLocale();
+
         // Initialize animations when page loads
         window.addEventListener('load', () => {
             createFloatingDots();
@@ -397,15 +499,6 @@
             type();
         }
 
-        // Initialize typing effect after page load
-        setTimeout(() => {
-            const typingElement = document.querySelector('.typing-animation');
-            if (typingElement) {
-                typeWriter(typingElement, '> console.log("Welcome to my digital world");');
-            }
-        }, 2000);
     </script>
 </body>
 </html>
-
-
